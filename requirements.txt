@@ -1,0 +1,84 @@
+# Software Requirements
+
+## Hardware
+
+* ESP32-S3 DevKit
+* MAX30102 Pulse Oximeter / PPG Sensor
+* SH1106 OLED Display (I2C)
+* USB Type-C Cable
+
+---
+
+## Software
+
+* Arduino IDE 2.x (recommended)
+* ESP32 Arduino Core (Espressif)
+* Python 3.10+ (for MQTT coordinator)
+
+---
+
+## Arduino Libraries
+
+### Required
+
+| Library               | Purpose                      |
+| --------------------- | ---------------------------- |
+| Wire                  | I2C communication            |
+| MAX30105 by SparkFun  | MAX30102 sensor driver       |
+| Adafruit GFX Library  | Graphics primitives for OLED |
+| Adafruit SH110X       | SH1106 OLED driver           |
+| TensorFlow Lite Micro | On-device TinyML inference   |
+
+---
+
+### ESP32 Built-in Components
+
+These are included with the ESP32 Arduino Core and do **not** require separate installation.
+
+* Arduino
+* WiFi
+* Preferences
+* SPIFFS
+* esp_heap_caps
+
+---
+
+## Python Dependencies
+
+Install using
+
+```bash
+pip install -r requirements.txt
+```
+
+Contents of `requirements.txt`
+
+```text
+paho-mqtt>=2.0
+```
+
+---
+
+## Tested Environment
+
+| Component             | Version                             |
+| --------------------- | ----------------------------------- |
+| Arduino IDE           | 2.x                                 |
+| ESP32 Arduino Core    | 3.x                                 |
+| TensorFlow Lite Micro | Tested with Arduino-compatible TFLM |
+| Python                | 3.10+                               |
+
+---
+
+## Notes
+
+This framework is model-agnostic.
+
+Users only need to replace:
+
+* model_data.cc
+* model.h
+
+with their own TensorFlow Lite Micro converted model.
+
+No other source code modifications are required for basic deployment.

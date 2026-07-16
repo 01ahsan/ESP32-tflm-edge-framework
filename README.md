@@ -1,5 +1,9 @@
 # ESP32-S3 TinyML PPG Project
 
+
+<img width="1378" height="1719" alt="pic" src="https://github.com/user-attachments/assets/f190c538-fa70-4a96-9508-f103c915817d" />
+
+
 This repository contains the first working release of an ESP32-S3 TinyML PPG inference demo.
 
 ## What is included
